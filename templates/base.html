@@ -68,12 +68,12 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg">
                   <li><a class="dropdown-item" href="#">Profile</a></li>
-                  <li><a class="dropdown-item" href="#">Change password</a></li>
-                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                  <li><a class="dropdown-item" href="{% url 'password_change' %}">Change password</a></li>
+                  <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                 </ul>
                 {% else %}
-                <a href = "#" class="btn btn-primary"> Login</a>
-                <a href = "#" class="btn btn-primary"> SignUp</a>
+                <a href = "{% url 'login' %}" class="btn btn-primary"> Login</a>
+                <a href = "{% url "users:signup" %}" class="btn btn-primary"> SignUp</a>
                 {% endif %}
               </div>
           </div>
