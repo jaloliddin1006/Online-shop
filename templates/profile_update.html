@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block title %}
-E-bazar Login
+Profile Update - {{ request.user }}
 {% endblock title %}
 
 
@@ -13,11 +13,13 @@ E-bazar Login
     <div class="col mt-5">
 </div>
     <div class="col-6 mt-6">
-    <h2> Login here </h2>
-    <form method="POST"> {% csrf_token %}
+    <h2> 
+Profile Update - {{ request.user }}
+</h2>
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
                 {{ form | crispy }}
-                <button type="submit" class="btn btn-primary"> Login </button>
-                <a class="btn btn-secondary" href="{% url "main:index" %}"> Back to home </a>
+                <button type="submit" class="btn btn-primary"> Update </button>
+                <a class="btn btn-secondary" href="{% url 'users:profile' request.user.username %}"> Back to Profile </a>
             </form>
 
 </div>
