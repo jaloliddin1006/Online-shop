@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import NewProductForm
-from .models import ProductImage
+from .models import ProductImage, Product
 from django.contrib import messages
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 
@@ -19,3 +20,8 @@ def new_product(request):
             return redirect("main:index")
         return render(request, "product_new.html", {"form":form})
         
+        
+        
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    return render(request, "product_detail.html", {"product":product})
