@@ -19,7 +19,7 @@ New Product
                 {% comment %} [ enctype="multipart/form-data" ] => formadan fayllar yuborilayotganda barcha fayllarni
                 qabul qilish uchun qo'yiladi {% endcomment %}
                 {{ form | crispy }}
-                <button type="submit" class="btn btn-primary"> Update </button>
+                <button type="submit" class="btn btn-primary"> Create </button>
                 <a class="btn btn-secondary" href="{% url 'main:index' %}"> Back to Home
                 </a>
             </form>
