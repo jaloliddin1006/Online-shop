@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+New Product
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col mt-5">
+        </div>
+        <div class="col-6 mt-6">
+            <h2>
+                New Product
+
+            </h2>
+            <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                {% comment %} [ enctype="multipart/form-data" ] => formadan fayllar yuborilayotganda barcha fayllarni
+                qabul qilish uchun qo'yiladi {% endcomment %}
+                {{ form | crispy }}
+                <button type="submit" class="btn btn-primary"> Update </button>
+                <a class="btn btn-secondary" href="{% url 'main:index' %}"> Back to Home
+                </a>
+            </form>
+
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
